@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<jats4t-registry>
+
+    <!-- HTTP URIs for the XSD schemas -->
+    <xsd-uri>
+        <value>http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1.xsd</value>
+    </xsd-uri>
+
+    <!-- reference @publication-type values -->
+    <publication-type>
+        <value>journal</value>
+        <value>book</value>
+        <value>letter</value>
+        <value>review</value>
+        <value>patent</value>
+        <value>report</value>
+        <value>standard</value>
+        <value>data</value>
+        <value>working-paper</value>
+    </publication-type>
+
+
+</jats4t-registry>

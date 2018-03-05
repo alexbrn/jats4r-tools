@@ -1,0 +1,51 @@
+html,
+table
+{
+    font-family:'Open sans', sans-serif !important;
+}
+
+td{
+    padding:2px;
+}
+
+th{
+    background-color:#cfc
+}
+
+body{
+    margin-left:5%;
+    margin-right:5%;
+}
+
+h1,
+h2,
+h3{
+    color:#3a3;
+}
+
+/* Tooltip container */
+.tooltip{
+    position:relative;
+    display:inline-block;
+    border-bottom:1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext{
+    visibility:hidden;
+    width:320px;
+    background-color:#050;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    border-radius:6px;
+
+    /* Position the tooltip text - see examples below! */
+    position:absolute;
+    z-index:1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext{
+    visibility:visible;
+}
