@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+  * jats4r-validator
+-->
+
+<web-app>
+
+  <display-name>jats4r-validator</display-name>
+  <description>jats4r-validator</description>
+
+  <context-param>
+    <param-name>temp-folder-win</param-name>
+    <param-value>c:\jatsval</param-value>
+    <description>Where the non-web portions of the application are located</description>
+  </context-param>
+  
+  <context-param>
+    <param-name>temp-folder-nix</param-name>
+    <param-value>/jatsval</param-value>
+    <description>Where the non-web portions of the application are located</description>
+  </context-param>
+  
+
+  <context-param>
+    <param-name>nix-invoke</param-name>
+    <param-value>validate.sh</param-value>
+    <description>nix</description>
+  </context-param>
+
+  <context-param>
+    <param-name>win-invoke</param-name>
+    <param-value>cmd /c c:\jatsval\validate.bat</param-value>
+    <description>win</description>
+  </context-param>
+
+  <context-param>
+    <param-name>max-upload</param-name>
+    <param-value>500000</param-value>
+    <description>Max size of submissions</description>
+  </context-param>
+
+  <servlet>
+    <servlet-name>ValidateServlet</servlet-name>
+    <description>Synchronous validation of POSTED documents</description>
+    <servlet-class>org.jats4r.ValidateServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>com.xmlfirst.InitServlet</servlet-class>
+    <init-param>
+      <param-name>log4j-properties-location</param-name>
+      <param-value>WEB-INF/log4j.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ValidateServlet</servlet-name>
+    <url-pattern>/validate</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
+  <!-- <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>main</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      <http-method>GET</http-method>
+      
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>jats-users</role-name>
+    </auth-constraint>
+    
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  
+  <login-config>
+    <auth-method>BASIC</auth-method>
+  </login-config>-->
+
+
+</web-app>

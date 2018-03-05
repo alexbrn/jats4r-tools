@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JATS4R validator</title>
+
+
+
+		<style type="text/css">
+			.label{
+			    font-style:italic;
+			    text-align:right;
+			    margin-right:1em;
+			}
+			.spread{
+			    font-weight:bold;
+			    margin-top:1em;
+			    background-color:silver;
+			}
+			.pages{
+			    font-weight:bold;
+			}
+			.group{
+			    font-weight:bold;
+			    margin-top:1em;
+			    margin-left:1em;
+			    background-color:#DFFFDF;
+			}
+			.textframe{
+			    font-weight:bold;
+			    margin-top:1em;
+			    margin-left:1em;
+			    background-color:#DFDFFF;
+			}
+			.object{
+			    font-weight:bold;
+			    margin-top:1em;
+			    margin-left:1em;
+			    background-color:#FFDFDF;
+			}
+			.paragraph{
+			    font-style:italic;
+			    margin-top:0.5em;
+			    margin-bottom:0.5em;
+			    margin-left:2em;
+			}
+			.end-para{
+			    border-bottom:thin solid gray;
+			}
+			.note{
+			    margin-top:0.5em;
+			    margin-bottom:0.5em;
+			    color:gray;
+			}
+			.break{
+			    color:gray;
+			}
+			.nontext{
+			    color:red;
+			}
+			.table{
+			    font-weight:bold;
+			    margin-top:0.5em;
+			    margin-bottom:0.5em;
+			    margin-left:1.5em;
+			    background-color:#FFFFDF;
+			}
+			.cell{
+			    font-style:italic;
+			    font-weight:bold;
+			    margin-left:2em;
+			    background-color:#FFFFDF;
+			}
+			.paraprops{
+			    color:maroon;
+			}
+			.charprops{
+			    color:gray;
+			}
+			.imageprops{
+			    font-style:italic;
+			    color:gray;
+			}
+			.space{
+			    background-color:silver;
+			    color:silver;
+			}
+			.tab{
+			    background-color:silver;
+			}
+			.content{
+			    margin-left:1em;
+			    margin-top:0;
+			    margin-bottom:0;
+			}
+			.underscore{
+			    text-decoration:underline;
+			}
+			.error{
+			    background-color:yellow;
+			    text-decoration:none;
+			}
+			
+			/* for input form */
+			.container{
+			    width:500px;
+			    clear:both;
+			}
+			.container input{
+			    width:100%;
+			    clear:both;
+			}</style>
+
+
+		<script type="text/javascript">
+								function setUIState()
+								{
+									var addrInput1 = document.getElementById('email1');
+									var addrInput2 = document.getElementById('email2');
+									var mailCheck = document.getElementById('doMail')
+									var matchWarn = document.getElementById('notmatch');
+									var addrsMatch = (addrInput1.value == addrInput2.value);
+									
+									addrInput1.disabled = ! mailCheck.checked;
+									addrInput2.disabled = ! mailCheck.checked;
+									
+									var warnVis = addrsMatch ? "hidden" : "visible";
+									matchWarn.style.visibility = warnVis;
+									
+								}
+			</script>
+
+	</head>
+	<body onload="setUIState()">
+		<div class="body">
+			<h1>JATS4R validation</h1>
+			<form class="valbox" action="validate" enctype="multipart/form-data" id="myform"
+				method="post">
+				<fieldset> Select JATS XML file for validation<br />
+					<input name="candidate" size="80" type="file" /<br />
+					<input id="uploadButton" type="submit" value="Validate" />
+				</fieldset>
+
+			</form>
+	
+		</div>
+	</body>
+</html>
