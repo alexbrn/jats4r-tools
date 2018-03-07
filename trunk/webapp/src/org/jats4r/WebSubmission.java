@@ -49,7 +49,7 @@ public class WebSubmission extends Submission
 
         isMultipart = ServletFileUpload.isMultipartContent( this.request );
 
-        if( isMultipart )
+        if( isMultipart ) 
         {
             parseMultiPart( this.request );
         }
